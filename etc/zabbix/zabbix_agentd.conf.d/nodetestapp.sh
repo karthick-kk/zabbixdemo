@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Connection validation
-timeout 3 bash -c "cat < /dev/null > /dev/tcp/127.0.0.1/3000"
+timeout 3 bash -c "cat < /dev/null > /dev/tcp/127.0.0.1/3000" 2>/dev/null
 check=$?
 echo "Connection status to 127.0.0.1:3000 is $check" > /var/tmp/.testnodejsapp.log
 if [ $check -eq 0 ]
