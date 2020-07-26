@@ -23,7 +23,7 @@ echo "test nodejs app is NOT running" >> /var/tmp/.testnodejsapp.log
 fi
 
 # User validation
-ustat=`ps -ef|grep server.js|grep -v grep|awk '{print $1}'`
+ustat=`ps -ef|grep server.js|grep -v grep|awk '{print $1}'|head -1`
 if [[ "$ustat" == "root" || "$ustat" == "" ]]
 then
 usstat=0
